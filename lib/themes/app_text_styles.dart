@@ -6,11 +6,13 @@ class AppTextsStyle{
     fontSize: 16,
     fontWeight: FontWeight.bold,
   );
+
   static const TextStyle boldBig=TextStyle(
     fontFamily: 'Nunito-Sans',
     fontSize: 18,
     fontWeight: FontWeight.bold,
   );
+
   static const TextStyle boldSmall=TextStyle(
     fontFamily: 'Nunito-Sans',
     fontSize: 11,

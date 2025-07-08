@@ -14,6 +14,7 @@ class ProductViewModel {
   final String imageUrl;
   final List<String> marks;
   final int price;
+  final int sale;
   final String description;
   final List<Specification> specification;
   final List<CategoryViewModel> category;
@@ -24,6 +25,7 @@ class ProductViewModel {
     required this.imageUrl,
     required this.marks,
     required this.price,
+    required this.sale,
     required this.description,
     required this.specification,
     required this.category,

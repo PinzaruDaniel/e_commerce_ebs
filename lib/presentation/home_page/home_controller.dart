@@ -11,9 +11,10 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "Wireless Headphones",
         company: "Sony",
-        imageUrl: "https://example.com/images/headphones.jpg",
+        imageUrl: "assets/products/headphones.jpeg",
         marks: ["Best Seller", "Trending"],
         price: 299,
+        sale: 10,
         description: "High-quality wireless noise-cancelling headphones with long battery life.",
         specification: [
           Specification(title: "Bluetooth", value: "5.0"),
@@ -35,9 +36,10 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "Smartphone",
         company: "Samsung",
-        imageUrl: "https://example.com/images/smartphone.jpg",
+        imageUrl: "assets/products/samsung-phone.jpeg",
         marks: ["New Arrival", "Featured"],
         price: 999,
+        sale: 20,
         description: "Flagship smartphone with high-end specs and camera.",
         specification: [
           Specification(title: "Display", value: "6.8-inch"),
@@ -59,9 +61,10 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "Gaming Laptop",
         company: "Asus",
-        imageUrl: "https://example.com/images/gaming-laptop.jpg",
+        imageUrl: "assets/products/gaming-laptop.jpg",
         marks: ["Top Rated", "Performance"],
         price: 1899,
+        sale: 0,
         description: "High-performance gaming laptop with dedicated graphics.",
         specification: [
           Specification(title: "Processor", value: "Intel i9"),
@@ -79,9 +82,10 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "Smartwatch",
         company: "Apple",
-        imageUrl: "https://example.com/images/smartwatch.jpg",
+        imageUrl: "assets/products/smartwatch.jpeg",
         marks: ["Trending", "Best Seller"],
         price: 399,
+        sale: 0,
         description: "Apple Watch with health tracking and GPS.",
         specification: [
           Specification(title: "Heart Rate Monitor", value: "Yes"),
@@ -103,9 +107,10 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "4K TV",
         company: "LG",
-        imageUrl: "https://example.com/images/4k-tv.jpg",
+        imageUrl: "assets/products/4k-tv.jpg",
         marks: ["New Arrival"],
         price: 1200,
+        sale: 15,
         description: "Ultra HD 4K smart TV with HDR support.",
         specification: [
           Specification(title: "Screen Size", value: "65-inch"),
@@ -127,9 +132,10 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "Bluetooth Speaker",
         company: "JBL",
-        imageUrl: "https://example.com/images/bluetooth-speaker.jpg",
+        imageUrl: "assets/products/jbl.jpg",
         marks: ["Popular", "Affordable"],
         price: 99,
+        sale: 0,
         description: "Portable Bluetooth speaker with deep bass.",
         specification: [
           Specification(title: "Bluetooth Version", value: "5.1"),
@@ -151,9 +157,10 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "DSLR Camera",
         company: "Canon",
-        imageUrl: "https://example.com/images/canon-dslr.jpg",
+        imageUrl: "assets/products/camera.jpeg",
         marks: ["Best Seller", "Professional"],
         price: 1500,
+        sale: 30,
         description: "Professional DSLR camera for stunning photos.",
         specification: [
           Specification(title: "Resolution", value: "24.1MP APS-C"),
@@ -171,9 +178,10 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "Microwave Oven",
         company: "Panasonic",
-        imageUrl: "https://example.com/images/microwave.jpg",
+        imageUrl: "assets/products/microwave.jpg",
         marks: ["Reliable", "Energy Efficient"],
         price: 250,
+        sale: 0,
         description: "Compact microwave oven with multiple cooking modes.",
         specification: [
           Specification(title: "Power", value: "800W"),
@@ -191,9 +199,10 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "Running Shoes",
         company: "Nike",
-        imageUrl: "https://example.com/images/nike-shoes.jpg",
+        imageUrl: "assets/products/shoes.jpg",
         marks: ["Top Rated", "Comfort"],
         price: 120,
+        sale: 0,
         description: "Lightweight and comfortable running shoes.",
         specification: [
           Specification(title: "Material", value: "Breathable Mesh"),
@@ -211,9 +220,10 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "Electric Kettle",
         company: "Philips",
-        imageUrl: "https://example.com/images/electric-kettle.jpg",
+        imageUrl: "assets/products/electric-kettle.jpg",
         marks: ["Energy Saver", "Popular"],
         price: 45,
+        sale: 10,
         description: "Fast boiling electric kettle with auto shut-off.",
         specification: [
           Specification(title: "Capacity", value: "1.7L"),

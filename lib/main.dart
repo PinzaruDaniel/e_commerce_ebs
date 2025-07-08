@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
-        fontFamily: 'Nunito-sans',
+        fontFamily: 'Nunito-Sans',
         useMaterial3: true,
       ),
       initialRoute: "/",
