@@ -1,0 +1,38 @@
+import 'package:flutter/material.dart';
+
+class HomeAdBannerWidget extends StatefulWidget {
+  const HomeAdBannerWidget({super.key});
+
+  @override
+  State<HomeAdBannerWidget> createState() => _HomeAdBannerWidgetState();
+}
+
+class _HomeAdBannerWidgetState extends State<HomeAdBannerWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 24.0),
+          child: SizedBox(
+            height: 150,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              shrinkWrap: true,
+              itemCount: 6,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(24),
+                      child: Image.asset('assets/banner/banner.png', fit: BoxFit.fill, width:300)),
+                );
+              },
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
