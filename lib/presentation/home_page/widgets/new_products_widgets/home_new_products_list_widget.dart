@@ -23,8 +23,12 @@ class _HomeNewProductsListWidgetState extends State<HomeNewProductsListWidget> {
               scrollDirection: Axis.horizontal,
               itemCount: widget.item.length,
               itemBuilder: (context, index){
+                if(index%2==0){
                 var itemProducts=widget.item[index];
-                return HomeNewProductsItemWidget(item: itemProducts,);
+                return HomeNewProductsItemWidget(item: itemProducts,);}
+                else{
+                  return SizedBox.shrink();
+                }
               }),
         )
       ],
