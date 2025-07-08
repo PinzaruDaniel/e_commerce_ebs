@@ -17,11 +17,10 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
-        fontFamily: 'Nunito-Sans',
+        fontFamily: 'Nunito-sans',
         useMaterial3: true,
       ),
       initialRoute: "/",
-      //home: HomePage(),
       getPages: [
         GetPage(name: "/", page: ()=> HomePage())
       ],

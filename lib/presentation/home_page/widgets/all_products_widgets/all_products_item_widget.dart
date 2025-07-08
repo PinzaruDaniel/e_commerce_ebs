@@ -3,17 +3,15 @@ import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class HomeNewProductsItemWidget extends StatefulWidget {
-  const HomeNewProductsItemWidget({super.key, required this.item});
-
+class AllProductsItemWidget extends StatefulWidget {
+  const AllProductsItemWidget({super.key, required this.item});
   final ProductViewModel item;
 
   @override
-  State<HomeNewProductsItemWidget> createState() => _HomeNewProductsItemWidgetState();
+  State<AllProductsItemWidget> createState() => _AllProductsItemWidgetState();
 }
 
-class _HomeNewProductsItemWidgetState extends State<HomeNewProductsItemWidget> {
-
+class _AllProductsItemWidgetState extends State<AllProductsItemWidget> {
   @override
   Widget build(BuildContext context) {
     return InkWell(

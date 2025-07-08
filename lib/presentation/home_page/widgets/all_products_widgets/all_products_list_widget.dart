@@ -1,23 +1,23 @@
 import 'package:e_commerce_ebs/general_widgets/header_title_widget.dart';
-import 'package:e_commerce_ebs/presentation/home_page/widgets/new_products_widgets/home_new_products_item_widget.dart';
+import 'package:e_commerce_ebs/presentation/home_page/widgets/all_products_widgets/all_products_item_widget.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
 
-class HomeNewProductsListWidget extends StatefulWidget {
-  const HomeNewProductsListWidget({super.key, required this.item});
+class AllProductsListWidget extends StatefulWidget {
+  const AllProductsListWidget({super.key, required this.item});
   final List<ProductViewModel> item;
 
   @override
-  State<HomeNewProductsListWidget> createState() => _HomeNewProductsListWidgetState();
+  State<AllProductsListWidget> createState() => _AllProductsListWidgetState();
 }
 
-class _HomeNewProductsListWidgetState extends State<HomeNewProductsListWidget> {
+class _AllProductsListWidgetState extends State<AllProductsListWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        HeaderTitleWidget(title: 'NEW PRODUCTS'),
+        HeaderTitleWidget(title: 'ALL PRODUCTS'),
         Container(
           height: 250,
           child: ListView.builder(
@@ -25,12 +25,8 @@ class _HomeNewProductsListWidgetState extends State<HomeNewProductsListWidget> {
               scrollDirection: Axis.horizontal,
               itemCount: widget.item.length,
               itemBuilder: (context, index){
-                if(index%2==0){
                 var itemProducts=widget.item[index];
-                return HomeNewProductsItemWidget(item: itemProducts,);}
-                else{
-                  return SizedBox.shrink();
-                }
+                return AllProductsItemWidget(item: itemProducts);
               }),
         )
       ],
