@@ -1,7 +1,9 @@
 import 'package:e_commerce_ebs/general_widgets/header_title_widget.dart';
-import 'package:e_commerce_ebs/presentation/home_page/widgets/new_products_widgets/home_new_products_item_widget.dart';
+
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
+
+import 'home_products_item_widget.dart';
 
 class HomeNewProductsListWidget extends StatefulWidget {
   const HomeNewProductsListWidget({super.key, required this.item});
@@ -27,7 +29,7 @@ class _HomeNewProductsListWidgetState extends State<HomeNewProductsListWidget> {
               itemBuilder: (context, index){
                 if(index%2==0){
                 var itemProducts=widget.item[index];
-                return HomeNewProductsItemWidget(item: itemProducts,);}
+                return HomeProductsItemWidget(item: itemProducts,);}
                 else{
                   return SizedBox.shrink();
                 }

@@ -1,7 +1,7 @@
 import 'package:e_commerce_ebs/general_widgets/header_title_widget.dart';
-import 'package:e_commerce_ebs/presentation/home_page/widgets/sale_products_widget/sale_products_products_item_widget.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
+import 'home_products_item_widget.dart';
 
 class SaleProductsListWidget extends StatefulWidget {
   const SaleProductsListWidget({super.key, required this.products});
@@ -28,7 +28,7 @@ class _SaleProductsListWidgetState extends State<SaleProductsListWidget> {
             itemCount: discountedProducts.length,
             itemBuilder: (context, index) {
               final product = discountedProducts[index];
-              return SaleProductsProductsItemWidget(item: product);
+              return HomeProductsItemWidget(item: product);
             },
           ),
         ),

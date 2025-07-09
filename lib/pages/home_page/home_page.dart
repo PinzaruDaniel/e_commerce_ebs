@@ -1,9 +1,9 @@
-// ignore_for_file: invalid_use_of_protected_member
 
-import 'package:e_commerce_ebs/presentation/home_page/widgets/all_products_widgets/all_products_list_widget.dart';
-import 'package:e_commerce_ebs/presentation/home_page/widgets/home_ad_banner_widget.dart';
-import 'package:e_commerce_ebs/presentation/home_page/widgets/new_products_widgets/home_new_products_list_widget.dart';
-import 'package:e_commerce_ebs/presentation/home_page/widgets/sale_products_widget/sale_products_list_widget.dart';
+
+import 'package:e_commerce_ebs/pages/home_page/widgets/all_products_list_widget.dart';
+import 'package:e_commerce_ebs/pages/home_page/widgets/home_ad_banner_widget.dart';
+import 'package:e_commerce_ebs/pages/home_page/widgets/home_new_products_list_widget.dart';
+import 'package:e_commerce_ebs/pages/home_page/widgets/sale_products_list_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -44,9 +44,9 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             HomeAdBannerWidget(),
-            HomeNewProductsListWidget(item: homeController.products.value),
-            SaleProductsListWidget(products: homeController.products.value),
-            AllProductsListWidget(item: homeController.products.value),
+            HomeNewProductsListWidget(item: homeController.products),
+            SaleProductsListWidget(products: homeController.products),
+            AllProductsListWidget(item: homeController.products),
             SizedBox(height: 20),
           ],
         ),

@@ -1,7 +1,8 @@
 import 'package:e_commerce_ebs/general_widgets/header_title_widget.dart';
-import 'package:e_commerce_ebs/presentation/home_page/widgets/all_products_widgets/all_products_item_widget.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
+
+import 'home_products_item_widget.dart';
 
 class AllProductsListWidget extends StatefulWidget {
   const AllProductsListWidget({super.key, required this.item});
@@ -26,7 +27,7 @@ class _AllProductsListWidgetState extends State<AllProductsListWidget> {
               itemCount: widget.item.length,
               itemBuilder: (context, index){
                 var itemProducts=widget.item[index];
-                return AllProductsItemWidget(item: itemProducts);
+                return HomeProductsItemWidget(item: itemProducts);
               }),
         )
       ],
