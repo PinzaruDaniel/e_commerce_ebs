@@ -33,7 +33,7 @@ class _HomeAdBannerWidgetState extends State<HomeAdBannerWidget> {
                       ),
                       Positioned(
                         left: 60,
-                        child: Text('ONLY on July we have\n the BEST discounts!!!', textAlign: TextAlign.center,
+                        child: Text('ONLY in July we have\n the BEST discounts!!!', textAlign: TextAlign.center,
                           style: AppTextsStyle.bold.copyWith(color: Colors.white),),
                       ),
                       Padding(
