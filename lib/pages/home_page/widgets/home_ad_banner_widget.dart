@@ -1,3 +1,4 @@
+import 'package:e_commerce_ebs/themes/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class HomeAdBannerWidget extends StatefulWidget {
@@ -27,19 +28,26 @@ class _HomeAdBannerWidgetState extends State<HomeAdBannerWidget> {
                   child: Stack(
                     children: [
                       ClipRRect(
-                          borderRadius: BorderRadius.circular(24),
-                          child: Image.asset('assets/banner/banner.png', fit: BoxFit.fill, width:300)),
+                        borderRadius: BorderRadius.circular(24),
+                        child: Image.asset('assets/banner/banner.png', fit: BoxFit.fill, width: 300),
+                      ),
+                      Positioned(
+                        left: 60,
+                        child: Text('ONLY on July we have\n the BEST discounts!!!', textAlign: TextAlign.center,
+                          style: AppTextsStyle.bold.copyWith(color: Colors.white),),
+                      ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 6),
                         child: Align(
                           alignment: Alignment.bottomLeft,
                           child: TextButton(
-                              style: TextButton.styleFrom(
-                                backgroundColor: Colors.orangeAccent,
-                                foregroundColor: Colors.white,
-                              ),
-                              onPressed: (){},
-                              child: Text('Check our new products!')),
+                            style: TextButton.styleFrom(
+                              backgroundColor: Colors.orangeAccent,
+                              foregroundColor: Colors.white,
+                            ),
+                            onPressed: () {},
+                            child: Text('Check our new products!'),
+                          ),
                         ),
                       ),
                     ],

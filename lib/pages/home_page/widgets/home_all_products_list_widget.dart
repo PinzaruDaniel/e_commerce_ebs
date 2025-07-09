@@ -16,7 +16,7 @@ class _AllProductsListWidgetState extends State<AllProductsListWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         HeaderTitleWidget(title: 'ALL PRODUCTS'),
         SizedBox(
