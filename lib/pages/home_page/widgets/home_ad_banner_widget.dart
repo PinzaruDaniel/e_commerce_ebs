@@ -30,7 +30,7 @@ class _HomeAdBannerWidgetState extends State<HomeAdBannerWidget> {
                           borderRadius: BorderRadius.circular(24),
                           child: Image.asset('assets/banner/banner.png', fit: BoxFit.fill, width:300)),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 6),
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
                         child: Align(
                           alignment: Alignment.bottomLeft,
                           child: TextButton(
