@@ -37,6 +37,8 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
         actions: [
+          Image.asset('assets/icons/icon.png'),
+          Spacer(),
           IconButton(onPressed: () {}, icon: SvgPicture.asset('assets/icons/filters.svg')),
           IconButton(onPressed: () {}, icon: SvgPicture.asset('assets/icons/Cart icon.svg')),
         ],
