@@ -1,4 +1,5 @@
 
+import 'package:e_commerce_ebs/util/widgets/horizontal_products_list_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:e_commerce_ebs/pages/home_page/widgets/home_all_products_list_widget.dart';
 import 'package:e_commerce_ebs/pages/home_page/widgets/home_ad_banner_widget.dart';
@@ -49,8 +50,12 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               HomeAdBannerWidget(),
-              HomeNewProductsListWidget(item: homeController.products),
-              SaleProductsListWidget(products: homeController.products),
+              HorizontalProductsListWidget(items: homeController.products, type: ProductType.newProducts),
+
+              HorizontalProductsListWidget(items: homeController.products, type: ProductType.saleProducts),
+
+              /*HomeNewProductsListWidget(item: homeController.products),
+              SaleProductsListWidget(products: homeController.products),*/
               AllProductsListWidget(item: homeController.products),
             ],
           ),

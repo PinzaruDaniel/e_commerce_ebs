@@ -29,7 +29,7 @@ class _HomeNewProductsListWidgetState extends State<HomeNewProductsListWidget> {
               itemBuilder: (context, index){
                 if(index%2==0){
                 var itemProducts=widget.item[index];
-                return HomeProductsItemWidget(item: itemProducts,);}
+                return HomeProductsItemWidget(item: itemProducts, width: 180,);}
                 else{
                   return SizedBox.shrink();
                 }

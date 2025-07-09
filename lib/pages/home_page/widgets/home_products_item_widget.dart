@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class HomeProductsItemWidget extends StatefulWidget {
-  const HomeProductsItemWidget({super.key, required this.item});
+  const HomeProductsItemWidget({super.key, required this.item, this.width});
   final ProductViewModel item;
+  final double? width;
 
   @override
   State<HomeProductsItemWidget> createState() => _HomeProductsItemWidgetState();
@@ -27,7 +28,7 @@ class _HomeProductsItemWidgetState extends State<HomeProductsItemWidget> {
         padding: EdgeInsets.only(left: 8, right: 8),
         child: SizedBox(
 
-          width: 180,
+          width: widget.width,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -36,7 +37,8 @@ class _HomeProductsItemWidgetState extends State<HomeProductsItemWidget> {
                 child: Image(
                   image: AssetImage(widget.item.imageUrl[0]),
                   height: 160,
-                  width: 180,
+
+                  width: widget.width,
                   fit: BoxFit.cover,
                 ),
               ),

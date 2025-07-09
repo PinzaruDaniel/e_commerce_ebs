@@ -6,6 +6,7 @@ class HeaderTitleWidget extends StatelessWidget {
   const HeaderTitleWidget({super.key, required this.title});
   final String title;
 
+
   @override
   Widget build(BuildContext context) {
     return Padding(padding: EdgeInsets.only(top:24, bottom:8, left: 16),

@@ -28,7 +28,7 @@ class _SaleProductsListWidgetState extends State<SaleProductsListWidget> {
             itemCount: discountedProducts.length,
             itemBuilder: (context, index) {
               final product = discountedProducts[index];
-              return HomeProductsItemWidget(item: product);
+              return HomeProductsItemWidget(item: product, width: 180,);
             },
           ),
         ),

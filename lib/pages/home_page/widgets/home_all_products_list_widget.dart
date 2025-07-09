@@ -26,14 +26,14 @@ class _AllProductsListWidgetState extends State<AllProductsListWidget> {
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
 
-                childAspectRatio: 0.85,
+              childAspectRatio: 0.85,
               //mainAxisSpacing: 32.0,
             ),
             padding: EdgeInsets.only(left: 8.0, right: 8, top: 16),
             itemCount: widget.item.length,
             itemBuilder: (context, index) {
               var itemProducts=widget.item[index];
-              return HomeProductsItemWidget(item: itemProducts);
+              return Container( color: Colors.red, child: HomeProductsItemWidget(item: itemProducts));
             },
           ),
         ),
