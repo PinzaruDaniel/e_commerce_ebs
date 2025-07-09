@@ -25,6 +25,7 @@ class _AllProductsListWidgetState extends State<AllProductsListWidget> {
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
+
                 childAspectRatio: 0.85,
               //mainAxisSpacing: 32.0,
             ),

@@ -24,9 +24,26 @@ class _HomeAdBannerWidgetState extends State<HomeAdBannerWidget> {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8),
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.circular(24),
-                      child: Image.asset('assets/banner/banner.png', fit: BoxFit.fill, width:300)),
+                  child: Stack(
+                    children: [
+                      ClipRRect(
+                          borderRadius: BorderRadius.circular(24),
+                          child: Image.asset('assets/banner/banner.png', fit: BoxFit.fill, width:300)),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 6),
+                        child: Align(
+                          alignment: Alignment.bottomLeft,
+                          child: TextButton(
+                              style: TextButton.styleFrom(
+                                backgroundColor: Colors.orangeAccent,
+                                foregroundColor: Colors.white,
+                              ),
+                              onPressed: (){},
+                              child: Text('Check our new products!')),
+                        ),
+                      ),
+                    ],
+                  ),
                 );
               },
             ),
