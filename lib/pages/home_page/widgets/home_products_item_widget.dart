@@ -15,21 +15,28 @@ class _HomeProductsItemWidgetState extends State<HomeProductsItemWidget> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      focusColor: Colors.transparent,
-      splashColor: Colors.transparent,
-      highlightColor: Colors.transparent,
+      //focusColor: Colors.transparent,
+      //splashColor: Colors.transparent,
+      //highlightColor: Colors.transparent,
       onTap: () {},
       child: Padding(
         padding: EdgeInsets.only(left: 8, right: 8),
-        child: Container(
-          width: 160,
+        child: SizedBox(
+
+          width: 180,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(24),
-                child: Image(image: AssetImage(widget.item.imageUrl),height: 160, fit: BoxFit.cover),
+                child: Image(
+                  image: AssetImage(widget.item.imageUrl[0]),
+                  height: 160,
+                  width: 180,
+                  fit: BoxFit.cover,
+                ),
               ),
+
               Text(widget.item.title, style: AppTextsStyle.medium,),
               Text(widget.item.company, style: AppTextsStyle.medium,),
               Text('\$ ${NumberFormat('#,##0').format(widget.item.price)}', style: AppTextsStyle.boldBig.copyWith(fontSize: 16),)

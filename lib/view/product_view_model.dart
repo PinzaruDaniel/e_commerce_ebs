@@ -11,7 +11,7 @@ class Specification {
 class ProductViewModel {
   final String title;
   final String company;
-  final String imageUrl;
+  final List<String> imageUrl;
   final List<String> marks;
   final int price;
   final int sale;

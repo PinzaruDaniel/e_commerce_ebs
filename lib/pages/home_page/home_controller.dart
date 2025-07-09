@@ -11,7 +11,7 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "Wireless Headphones",
         company: "Sony",
-        imageUrl: "assets/products/headphones.jpeg",
+        imageUrl: ["assets/products/headphones.jpeg", ],
         marks: ["Best Seller", "Trending"],
         price: 299,
         sale: 10,
@@ -36,7 +36,7 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "Smartphone",
         company: "Samsung",
-        imageUrl: "assets/products/samsung-phone.jpeg",
+        imageUrl: ["assets/products/samsung-phone.jpeg"],
         marks: ["New Arrival", "Featured"],
         price: 999,
         sale: 20,
@@ -61,7 +61,7 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "Gaming Laptop",
         company: "Asus",
-        imageUrl: "assets/products/gaming-laptop.jpg",
+        imageUrl: ["assets/products/gaming-laptop.jpg"],
         marks: ["Top Rated", "Performance"],
         price: 1899,
         sale: 0,
@@ -82,7 +82,7 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "Smartwatch",
         company: "Apple",
-        imageUrl: "assets/products/smartwatch.jpeg",
+        imageUrl: ["assets/products/smartwatch.jpeg"],
         marks: ["Trending", "Best Seller"],
         price: 399,
         sale: 0,
@@ -107,7 +107,7 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "4K TV",
         company: "LG",
-        imageUrl: "assets/products/4k-tv.jpg",
+        imageUrl: ["assets/products/4k-tv.jpg"],
         marks: ["New Arrival"],
         price: 1200,
         sale: 15,
@@ -132,7 +132,7 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "Bluetooth Speaker",
         company: "JBL",
-        imageUrl: "assets/products/jbl.jpg",
+        imageUrl: ["assets/products/jbl.jpg"],
         marks: ["Popular", "Affordable"],
         price: 99,
         sale: 0,
@@ -157,7 +157,7 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "DSLR Camera",
         company: "Canon",
-        imageUrl: "assets/products/camera.jpeg",
+        imageUrl: ["assets/products/camera.jpeg"],
         marks: ["Best Seller", "Professional"],
         price: 1500,
         sale: 30,
@@ -178,7 +178,7 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "Microwave Oven",
         company: "Panasonic",
-        imageUrl: "assets/products/microwave.jpg",
+        imageUrl: ["assets/products/microwave.jpg"],
         marks: ["Reliable", "Energy Efficient"],
         price: 250,
         sale: 0,
@@ -199,7 +199,7 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "Running Shoes",
         company: "Nike",
-        imageUrl: "assets/products/shoes.jpg",
+        imageUrl: ["assets/products/shoes.jpg"],
         marks: ["Top Rated", "Comfort"],
         price: 120,
         sale: 0,
@@ -220,7 +220,7 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "Electric Kettle",
         company: "Philips",
-        imageUrl: "assets/products/electric-kettle.jpg",
+        imageUrl: ["assets/products/electric-kettle.jpg"],
         marks: ["Energy Saver", "Popular"],
         price: 45,
         sale: 10,
