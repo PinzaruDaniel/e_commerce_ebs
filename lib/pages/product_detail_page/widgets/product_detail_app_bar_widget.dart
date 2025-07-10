@@ -18,19 +18,19 @@ class _ProductDetailAppBarWidgetState extends State<ProductDetailAppBarWidget> {
     return Stack(
       children: [
         Align(
-          heightFactor: 0.9,
+          heightFactor: 1,
           child: CarouselSlider.builder(
             itemCount: widget.item.imageUrl.length,
             options: CarouselOptions(viewportFraction: 1, height: 300),
             itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) {
               final images = widget.item.imageUrl[itemIndex];
-              return Container(child: Image.asset(images, fit: BoxFit.fitHeight));
+              return Container( width: double.infinity, child: Image.asset(images, fit: BoxFit.cover));
             },
           ),
         ),
         AppBar(
           backgroundColor: Colors.transparent,
-          toolbarHeight: 130,
+          toolbarHeight: 80,
           actions: [IconButton(onPressed: () {}, icon: SvgPicture.asset('assets/icons/Cart icon.svg'))],
         ),
       ],
