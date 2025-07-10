@@ -222,7 +222,7 @@ class HomeController extends GetxController {
       ProductViewModel(
         title: "Electric Kettle",
         company: "Philips",
-        imageUrl: ["assets/products/electric-kettle.jpg"],
+        imageUrl: ["assets/products/electric-kettle.jpg","assets/products/electric-kettle1.jpg","assets/products/electric-kettle2.jpg",],
         marks: ["Energy Saver", "Popular"],
         price: 45,
         sale: 10,

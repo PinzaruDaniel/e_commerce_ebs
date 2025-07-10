@@ -22,7 +22,7 @@ class _HomeProductsItemWidgetState extends State<HomeProductsItemWidget> {
       //highlightColor: Colors.transparent,
       onTap: () {Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const ProductDetailPage()),
+        MaterialPageRoute(builder: (context) => ProductDetailPage(item: widget.item,)),
       );},
       child: Padding(
         padding: EdgeInsets.only(left: 8, right: 8),

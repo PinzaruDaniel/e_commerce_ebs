@@ -1,15 +1,11 @@
 
 import 'package:e_commerce_ebs/util/widgets/horizontal_products_list_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:e_commerce_ebs/pages/home_page/widgets/home_all_products_list_widget.dart';
 import 'package:e_commerce_ebs/pages/home_page/widgets/home_ad_banner_widget.dart';
-import 'package:e_commerce_ebs/pages/home_page/widgets/home_new_products_list_widget.dart';
-import 'package:e_commerce_ebs/pages/home_page/widgets/home_sale_products_list_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'home_controller.dart';
-
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
