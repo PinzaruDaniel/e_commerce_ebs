@@ -33,7 +33,7 @@ class _AllProductsListWidgetState extends State<AllProductsListWidget> {
             itemCount: widget.item.length,
             itemBuilder: (context, index) {
               var itemProducts=widget.item[index];
-              return Container( color: Colors.red, child: HomeProductsItemWidget(item: itemProducts));
+              return HomeProductsItemWidget(item: itemProducts);
             },
           ),
         ),

@@ -35,25 +35,29 @@ class HorizontalProductsListWidget extends StatefulWidget {
 }
 
 class _HorizontalProductsListWidgetState extends State<HorizontalProductsListWidget> {
+
+
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         HeaderTitleWidget(title: widget.type.title),
-         Container(
+        Container(
           height: 250,
-          child:  ListView.builder(
+          child: ListView.builder(
             padding: EdgeInsets.only(top: 12, left: 8),
             scrollDirection: Axis.horizontal,
             itemCount: widget.items.length,
             itemBuilder: (context, index) {
-              if (index % 2 == 0) {
-                var itemProducts = widget.items[index];
-                return HomeProductsItemWidget(item: itemProducts, width: 180);
-              } else {
-                return SizedBox.shrink();
-              }
+              var itemProduct = widget.items[index];
+              return HomeProductsItemWidget(item: itemProduct, width: 180);
             },
           ),
         ),
@@ -61,4 +65,4 @@ class _HorizontalProductsListWidgetState extends State<HorizontalProductsListWid
     );
   }
 }
-//if(widget.type.title==ProductType.newProducts)
+

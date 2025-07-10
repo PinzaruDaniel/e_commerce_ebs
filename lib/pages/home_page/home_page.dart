@@ -26,6 +26,8 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     Get.put(HomeController());
     homeController.initProduct();
+    homeController.getNewProducts();
+    homeController.getSaleProducts();
   }
 
 
@@ -50,12 +52,10 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               HomeAdBannerWidget(),
-              HorizontalProductsListWidget(items: homeController.products, type: ProductType.newProducts),
+              HorizontalProductsListWidget(items: homeController.newProducts, type: ProductType.newProducts),
 
-              HorizontalProductsListWidget(items: homeController.products, type: ProductType.saleProducts),
+              HorizontalProductsListWidget(items: homeController.saleProducts, type: ProductType.saleProducts),
 
-              /*HomeNewProductsListWidget(item: homeController.products),
-              SaleProductsListWidget(products: homeController.products),*/
               AllProductsListWidget(item: homeController.products),
             ],
           ),

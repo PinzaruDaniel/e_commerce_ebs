@@ -5,6 +5,8 @@ import '../../view/category_view_model.dart';
 
 class HomeController extends GetxController {
   RxList<ProductViewModel> products = RxList([]);
+  List<ProductViewModel> newProducts=[];
+  List<ProductViewModel> saleProducts=[];
 
   void initProduct() {
     products.value = [
@@ -239,5 +241,13 @@ class HomeController extends GetxController {
         ],
       ),
     ];
+  }
+
+  void getNewProducts(){
+    newProducts=products.where((product)=>products.indexOf(product)%2==0).toList();
+  }
+
+  void getSaleProducts(){
+    saleProducts=products.where((product)=>product.sale!=0).toList();
   }
 }
