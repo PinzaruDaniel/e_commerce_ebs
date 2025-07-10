@@ -28,7 +28,7 @@ class _AllProductsListWidgetState extends State<AllProductsListWidget> {
 
               childAspectRatio: 0.85,
             ),
-            padding: EdgeInsets.only(left: 8.0, right: 8, top: 16),
+            padding: EdgeInsets.only(left: 8.0, right: 0, top: 16),
             itemCount: widget.item.length,
             itemBuilder: (context, index) {
               var itemProducts=widget.item[index];
