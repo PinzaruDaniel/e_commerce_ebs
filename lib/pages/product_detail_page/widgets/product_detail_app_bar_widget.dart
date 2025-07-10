@@ -24,7 +24,7 @@ class _ProductDetailAppBarWidgetState extends State<ProductDetailAppBarWidget> {
             options: CarouselOptions(viewportFraction: 1, height: 300),
             itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) {
               final images = widget.item.imageUrl[itemIndex];
-              return Container( width: double.infinity, child: Image.asset(images, fit: BoxFit.cover));
+              return SizedBox( width: double.infinity, child: Image.asset(images, fit: BoxFit.cover));
             },
           ),
         ),
