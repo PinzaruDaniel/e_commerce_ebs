@@ -31,6 +31,11 @@ class _ProductDetailAppBarWidgetState extends State<ProductDetailAppBarWidget> {
         AppBar(
           backgroundColor: Colors.transparent,
           toolbarHeight: 80,
+          leading: IconButton(
+            onPressed: (){
+              Navigator.pop(context);
+            },
+              icon: Icon(Icons.arrow_back_ios_new_rounded, color: Color(0xff003bd1), size: 20,)),
           actions: [IconButton(onPressed: () {}, icon: SvgPicture.asset('assets/icons/Cart icon.svg'))],
         ),
       ],

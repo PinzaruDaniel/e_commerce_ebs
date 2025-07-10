@@ -25,10 +25,9 @@ class _AllProductsListWidgetState extends State<AllProductsListWidget> {
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-
               childAspectRatio: 0.85,
             ),
-            padding: EdgeInsets.only(left: 8.0, right: 0, top: 16),
+            padding: EdgeInsets.only(left: 8.0, top: 16),
             itemCount: widget.item.length,
             itemBuilder: (context, index) {
               var itemProducts=widget.item[index];
@@ -40,13 +39,3 @@ class _AllProductsListWidgetState extends State<AllProductsListWidget> {
     );
   }
 }
-/*ListView.builder(
-padding: EdgeInsets.only(top: 12, left: 8),
-scrollDirection: Axis.vertical,
-shrinkWrap: true,
-//physics: NeverScrollableScrollPhysics(),
-itemCount: widget.item.length,
-itemBuilder: (context, index){
-var itemProducts=widget.item[index];
-return HomeProductsItemWidget(item: itemProducts);
-}),*/
