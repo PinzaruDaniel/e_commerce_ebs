@@ -1,5 +1,5 @@
 
-import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_app_bar_widget.dart';
+import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_collapsed_app_bar_widget.dart';
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_expanded_app_bar.dart';
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_page_body_widget.dart';
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_price_widget.dart';
@@ -42,15 +42,15 @@ class ProductDetailPage extends HookWidget {
           SliverAppBar(
             expandedHeight: expandedBarHeight,
             collapsedHeight: collapseBarHeight,
-            floating: true,
             centerTitle: false,
-            //pinned: true,
+            pinned: true,
             title: AnimatedOpacity(
               opacity: isCollapsed.value ? 1 : 0,
               duration: Duration(milliseconds: 400),
-              child: ProductDetailAppBarWidget(item: item),
+              child: ProductDetailCollapsedAppBarWidget(item: item),
             ),
             elevation: 0,
+            surfaceTintColor: Colors.white,
             backgroundColor: isCollapsed.value ? Colors.white : Colors.transparent,
             leading: IconButton(
               onPressed: () {
@@ -59,7 +59,6 @@ class ProductDetailPage extends HookWidget {
               icon: Icon(Icons.arrow_back_ios_new_rounded, color: Color(0xff003bd1), size: 20),
             ),
             flexibleSpace: FlexibleSpaceBar(
-
                 background: ProductDetailExpandedAppBar(item: item)),
           ),
 
@@ -68,7 +67,7 @@ class ProductDetailPage extends HookWidget {
             child: ConstrainedBox(
               constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height),
               child: Material(
-                elevation: 7,
+                elevation: 0,
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
                 child: ProductDetailPageBodyWidget(item: item),
               ),

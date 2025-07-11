@@ -1,4 +1,5 @@
-import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_app_bar_widget.dart';
+import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_collapsed_app_bar_widget.dart';
+import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_description_widget.dart';
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_price_widget.dart';
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_tags_widget.dart';
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_title_widget.dart';
@@ -21,13 +22,13 @@ class _ProductDetailPageBodyWidgetState extends State<ProductDetailPageBodyWidge
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            //ProductDetailAppBarWidget(item: widget.item),
-
             ProductDetailTitleWidget(item: widget.item),
 
             ProductDetailPriceWidget(item: widget.item),
 
             ProductDetailTagsWidget(item: widget.item),
+
+            ProductDetailDescriptionWidget(item: widget.item),
           ],
         ),
       );

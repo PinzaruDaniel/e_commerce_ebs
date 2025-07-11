@@ -1,24 +1,23 @@
-import 'package:carousel_slider/carousel_slider.dart';
+
 import 'package:e_commerce_ebs/themes/app_text_styles.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
-class ProductDetailAppBarWidget extends StatefulWidget {
-  const ProductDetailAppBarWidget({super.key, required this.item});
+class ProductDetailCollapsedAppBarWidget extends StatefulWidget {
+  const ProductDetailCollapsedAppBarWidget({super.key, required this.item});
 
   final ProductViewModel item;
 
   @override
-  State<ProductDetailAppBarWidget> createState() => _ProductDetailAppBarWidgetState();
+  State<ProductDetailCollapsedAppBarWidget> createState() => _ProductDetailCollapsedAppBarWidgetState();
 }
 
-class _ProductDetailAppBarWidgetState extends State<ProductDetailAppBarWidget> {
+class _ProductDetailCollapsedAppBarWidgetState extends State<ProductDetailCollapsedAppBarWidget> {
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(widget.item.title, style: AppTextsStyle.boldSmall,)
+        Text(widget.item.title, style: AppTextsStyle.bold)
       ],
     );
 
