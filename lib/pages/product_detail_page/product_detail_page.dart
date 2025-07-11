@@ -1,4 +1,5 @@
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_app_bar_widget.dart';
+import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_tags_widget.dart';
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_title_widget.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,9 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
               children: [
                 ProductDetailAppBarWidget(item: widget.item,),
           
-                ProductDetailTitleWidget(item: widget.item,)
+                ProductDetailTitleWidget(item: widget.item,),
+
+                ProductDetailTagsWidget(item: widget.item)
               ],
             ),
           ),

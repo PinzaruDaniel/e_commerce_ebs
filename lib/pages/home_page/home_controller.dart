@@ -14,10 +14,14 @@ class HomeController extends GetxController {
         title: "Wireless Headphones",
         company: "Sony",
         imageUrl: ["assets/products/headphones.jpeg", ],
-        marks: ["Best Seller", "Trending"],
+        marks: ["Best Seller", "Trending", "Noise Cancelling", "Long Battery Life", "Comfort Fit", "Bluetooth 5.0"],
         price: 299,
         sale: 10,
-        description: "High-quality wireless noise-cancelling headphones with long battery life.",
+        description:
+        "Experience superior sound with Sony's premium wireless noise-cancelling headphones. "
+            "Designed for audiophiles and travelers, these headphones offer up to 30 hours of battery life, "
+            "quick charging, touch controls, and industry-leading ANC for immersive listening. "
+            "Ideal for music, work, or commuting.",
         specification: [
           Specification(title: "Bluetooth", value: "5.0"),
           Specification(title: "Noise Cancelling", value: "Yes"),
@@ -39,10 +43,14 @@ class HomeController extends GetxController {
         title: "Smartphone",
         company: "Samsung",
         imageUrl: ["assets/products/samsung-phone.jpeg"],
-        marks: ["New Arrival", "Featured"],
+        marks: ["New Arrival", "Featured", "5G Enabled", "Pro Camera", "Fast Charging", "Water Resistant"],
         price: 999,
         sale: 20,
-        description: "Flagship smartphone with high-end specs and camera.",
+        description:
+        "Samsung's latest flagship smartphone delivers cutting-edge performance with a powerful processor,"
+            " vibrant AMOLED display, and a pro-grade multi-lens camera system."
+            " Enjoy ultra-fast 5G, wireless charging, water resistance, and a sleek,"
+            " modern design perfect for power users and content creators.",
         specification: [
           Specification(title: "Display", value: "6.8-inch"),
           Specification(title: "Processor", value: "Snapdragon"),
@@ -64,10 +72,14 @@ class HomeController extends GetxController {
         title: "Gaming Laptop",
         company: "Asus",
         imageUrl: ["assets/products/gaming-laptop.jpg"],
-        marks: ["Top Rated", "Performance"],
+        marks: ["Top Rated", "Performance", "RGB Keyboard", "VR Ready", "SSD Storage", "Cooling System"],
         price: 1899,
         sale: 0,
-        description: "High-performance gaming laptop with dedicated graphics.",
+        description:
+        "Push the limits with this high-performance Asus gaming laptop featuring a dedicated NVIDIA GPU, "
+            "high-refresh-rate display, and customizable RGB keyboard. Built for smooth gameplay and multitasking,"
+            " it also excels at creative work like video editing and 3D rendering. "
+            "Stay cool even during intense sessions with advanced thermal management.",
         specification: [
           Specification(title: "Processor", value: "Intel i9"),
           Specification(title: "RAM", value: "16GB"),
@@ -85,10 +97,14 @@ class HomeController extends GetxController {
         title: "Smartwatch",
         company: "Apple",
         imageUrl: ["assets/products/smartwatch.jpeg"],
-        marks: ["Trending", "Best Seller"],
+        marks: ["Trending", "Best Seller", "Health Monitor", "Water Resistant", "Fitness Tracker", "Always-On Display"],
         price: 399,
         sale: 0,
-        description: "Apple Watch with health tracking and GPS.",
+        description:
+        "The Apple Watch is your all-day fitness coach, health tracker, and notification hub. "
+            "Monitor your heart rate, track workouts, use GPS, "
+            "and stay connected with calls and messages—all from your wrist. "
+            "Sleek design, swim-proof build, and compatibility with iPhone make it a must-have smart accessory.",
         specification: [
           Specification(title: "Heart Rate Monitor", value: "Yes"),
           Specification(title: "GPS", value: "Built-in"),
@@ -110,10 +126,14 @@ class HomeController extends GetxController {
         title: "4K TV",
         company: "LG",
         imageUrl: ["assets/products/4k-tv.jpg"],
-        marks: ["New Arrival"],
+        marks: ["New Arrival", "Smart TV", "HDR", "Ultra HD", "Voice Control", "Thin Bezel"],
         price: 1200,
         sale: 15,
-        description: "Ultra HD 4K smart TV with HDR support.",
+        description:
+        "Bring cinema-quality visuals to your living room with this LG 4K Ultra HD TV. "
+            "Enjoy lifelike clarity, vivid colors, and deep contrast with HDR10 support. "
+            "Smart TV functionality offers seamless streaming from your favorite apps, "
+            "while voice control and a sleek bezel-less design enhance your viewing experience.",
         specification: [
           Specification(title: "Screen Size", value: "65-inch"),
           Specification(title: "HDR", value: "HDR10+"),
@@ -135,10 +155,14 @@ class HomeController extends GetxController {
         title: "Bluetooth Speaker",
         company: "JBL",
         imageUrl: ["assets/products/jbl.jpg"],
-        marks: ["Popular", "Affordable"],
+        marks: ["Popular", "Affordable", "Portable", "Waterproof", "Deep Bass", "Long Battery Life"],
         price: 99,
         sale: 0,
-        description: "Portable Bluetooth speaker with deep bass.",
+        description:
+        "Take your music anywhere with the JBL portable Bluetooth speaker. "
+            "Compact but powerful, it delivers punchy bass, clear audio, "
+            "and up to 12 hours of playtime. With IPX7 waterproofing, it's perfect for the beach, "
+            "poolside, or outdoor adventures. Easy pairing and USB-C charging make it even more convenient.",
         specification: [
           Specification(title: "Bluetooth Version", value: "5.1"),
           Specification(title: "Battery Life", value: "12 Hours"),
@@ -160,10 +184,15 @@ class HomeController extends GetxController {
         title: "DSLR Camera",
         company: "Canon",
         imageUrl: ["assets/products/camera.jpeg"],
-        marks: ["Best Seller", "Professional"],
+        marks: ["Best Seller", "Professional", "High Resolution", "Interchangeable Lenses", "4K Video", "Wi-Fi Enabled"],
         price: 1500,
         sale: 30,
-        description: "Professional DSLR camera for stunning photos.",
+        description:
+        "Capture stunning, detailed photos with this professional-grade Canon DSLR camera. "
+            "Equipped with a high-resolution sensor, fast autofocus, and full manual controls, "
+            "it’s perfect for both seasoned photographers and ambitious beginners. "
+            "Supports a wide range of EF lenses and advanced features like 4K video, "
+            "Wi-Fi sharing, and dual-pixel autofocus.",
         specification: [
           Specification(title: "Resolution", value: "24.1MP APS-C"),
           Specification(title: "Processor", value: "DIGIC 8"),
@@ -181,10 +210,14 @@ class HomeController extends GetxController {
         title: "Microwave Oven",
         company: "Panasonic",
         imageUrl: ["assets/products/microwave.jpg"],
-        marks: ["Reliable", "Energy Efficient"],
+        marks: ["Reliable", "Energy Efficient", "Compact Design", "Easy to Use", "Multi-Cook Modes", "Even Heating"],
         price: 250,
         sale: 0,
-        description: "Compact microwave oven with multiple cooking modes.",
+        description:
+        "This Panasonic microwave oven is a dependable kitchen companion, featuring multiple cooking presets, "
+            "inverter technology for even heating, and a space-saving design. "
+            "With intuitive controls and a durable stainless steel finish, "
+            "it’s ideal for everyday use—from reheating to full meal preparation.",
         specification: [
           Specification(title: "Power", value: "800W"),
           Specification(title: "Cooking Programs", value: "10"),
@@ -202,10 +235,13 @@ class HomeController extends GetxController {
         title: "Running Shoes",
         company: "Nike",
         imageUrl: ["assets/products/shoes.jpg"],
-        marks: ["Top Rated", "Comfort"],
+        marks: ["Top Rated", "Comfort", "Breathable", "Durable", "Lightweight", "Ergonomic Design"],
         price: 120,
         sale: 0,
-        description: "Lightweight and comfortable running shoes.",
+        description: "These Nike running shoes are engineered for performance and comfort. "
+            "Lightweight and breathable, they feature responsive foam cushioning and a "
+            "flexible outsole for smooth motion. Ideal for training, jogging, or daily wear, "
+            "they combine high-end support with modern style and lasting durability.",
         specification: [
           Specification(title: "Material", value: "Breathable Mesh"),
           Specification(title: "Sole", value: "Cushioned"),
@@ -223,10 +259,13 @@ class HomeController extends GetxController {
         title: "Electric Kettle",
         company: "Philips",
         imageUrl: ["assets/products/electric-kettle.jpg","assets/products/electric-kettle1.jpg","assets/products/electric-kettle2.jpg",],
-        marks: ["Energy Saver", "Popular"],
+        marks: ["Energy Saver", "Popular", "Auto Shut-off", "Fast Boil", "Cool Touch", "Cordless Base"],
         price: 45,
         sale: 10,
-        description: "Fast boiling electric kettle with auto shut-off.",
+        description:
+        "Boil water quickly and safely with the Philips electric kettle. Designed for efficiency and safety, "
+            "it features fast boil technology, automatic shut-off, and a cordless 360° base for convenience. "
+            "Cool-touch exterior and BPA-free construction make it perfect for any modern kitchen.",
         specification: [
           Specification(title: "Capacity", value: "1.7L"),
           Specification(title: "Body", value: "Stainless Steel"),
