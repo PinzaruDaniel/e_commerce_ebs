@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:e_commerce_ebs/themes/app_text_styles.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -15,7 +16,17 @@ class ProductDetailAppBarWidget extends StatefulWidget {
 class _ProductDetailAppBarWidgetState extends State<ProductDetailAppBarWidget> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Row(
+      children: [
+        Text(widget.item.title, style: AppTextsStyle.boldSmall,)
+      ],
+    );
+
+
+
+
+
+    /*Stack(
       children: [
         Align(
           heightFactor: 1,
@@ -39,6 +50,6 @@ class _ProductDetailAppBarWidgetState extends State<ProductDetailAppBarWidget> {
           actions: [IconButton(onPressed: () {}, icon: SvgPicture.asset('assets/icons/Cart icon.svg'))],
         ),
       ],
-    );
+    );*/
   }
 }

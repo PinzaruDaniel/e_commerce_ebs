@@ -15,7 +15,7 @@ class ProductDetailTagsWidget extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.only(top:8, left: 8.0),
-          child: Text('Marks'),
+          child: Text('Marks', style: AppTextsStyle.boldSmall),
         ),
         Padding(
           padding: const EdgeInsets.only(left: 16.0),
