@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class ProductDetailExpandedAppBar extends StatefulWidget {
   const ProductDetailExpandedAppBar({super.key, required this.item});
