@@ -19,7 +19,7 @@ class _ProductDetailSpecificationWidgetState extends State<ProductDetailSpecific
       return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text('${section.title}'),
+          Text(section.title),
           Text(section.value)
         ],
       );
