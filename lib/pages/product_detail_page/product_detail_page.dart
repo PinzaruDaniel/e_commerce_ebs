@@ -3,7 +3,6 @@ import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_page_body_widget.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -22,12 +21,11 @@ class ProductDetailPage extends HookWidget {
     useEffect(() {
       void scrollListener() {
         final isNowCollapsed = scrollController.hasClients &&
-            scrollController.offset > (300 - 120);
+            scrollController.offset > (40);
         if (isCollapsed.value != isNowCollapsed) {
           isCollapsed.value = isNowCollapsed;
         }
       }
-
       scrollController.addListener(scrollListener);
       return () => scrollController.removeListener(scrollListener);
     }, [scrollController]);
@@ -43,14 +41,14 @@ class ProductDetailPage extends HookWidget {
             centerTitle: false,
             pinned: true,
             title: AnimatedSwitcher(
-              duration: Duration(milliseconds: 500),
+              duration: Duration(milliseconds: 600),
               child: isCollapsed.value
                   ? ProductDetailCollapsedAppBarWidget(item: item)
                   : SizedBox.shrink(),
             ),
             surfaceTintColor: Colors.white,
             backgroundColor: Colors.white,
-            foregroundColor: isCollapsed.value ? Colors.black : Colors.black,
+            foregroundColor: isCollapsed.value ? Colors.black : Colors.transparent,
             leading: IconButton(
               onPressed: () {
                 Navigator.pop(context);
