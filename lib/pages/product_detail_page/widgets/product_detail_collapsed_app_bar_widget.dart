@@ -1,3 +1,4 @@
+import 'dart:ui';
 
 import 'package:e_commerce_ebs/themes/app_text_styles.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';
@@ -17,13 +18,10 @@ class _ProductDetailCollapsedAppBarWidgetState extends State<ProductDetailCollap
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(widget.item.title, style: AppTextsStyle.bold)
+        Text(widget.item.title, style: AppTextsStyle.bold),
+
       ],
     );
-
-
-
-
 
     /*Stack(
       children: [

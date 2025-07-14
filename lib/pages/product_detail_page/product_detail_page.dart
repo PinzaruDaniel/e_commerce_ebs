@@ -1,4 +1,3 @@
-
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_collapsed_app_bar_widget.dart';
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_expanded_app_bar.dart';
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_page_body_widget.dart';
@@ -8,6 +7,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../themes/app_colors.dart';
+
 class ProductDetailPage extends HookWidget {
   const ProductDetailPage({super.key, required this.item});
 
@@ -15,42 +16,27 @@ class ProductDetailPage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    const collapseBarHeight = 60.00;
-    const expandedBarHeight = 300.00;
-
     final scrollController = useScrollController();
-    final isCollapsed = useState(false);
-    final didAddFeedback = useState(false);
+    final isCollapsed = useState(true);
 
-    return NotificationListener<ScrollNotification>(
-      onNotification: (notification) {
-        isCollapsed.value =
-            scrollController.hasClients && scrollController.offset > (expandedBarHeight - 120);
-        if (isCollapsed.value && !didAddFeedback.value) {
-          HapticFeedback.lightImpact();
-          didAddFeedback.value = true;
-        } else if (!isCollapsed.value) {
-          didAddFeedback.value = false;
-        }
-        return false;
-      },
-      child: CustomScrollView(
+    return Scaffold(
+      body: CustomScrollView(
         physics: ClampingScrollPhysics(),
         controller: scrollController,
         slivers: <Widget>[
           SliverAppBar(
-            expandedHeight: expandedBarHeight,
-            collapsedHeight: collapseBarHeight,
+            expandedHeight: 300,
+            collapsedHeight: 60,
             centerTitle: false,
             pinned: true,
             title: AnimatedOpacity(
-              opacity: isCollapsed.value ? 1 : 0,
-              duration: Duration(milliseconds: 400),
+              opacity: isCollapsed.value ? 0 : 1,
+              duration: Duration(milliseconds: 500),
               child: ProductDetailCollapsedAppBarWidget(item: item),
             ),
-            elevation: 0,
             surfaceTintColor: Colors.white,
-            backgroundColor: isCollapsed.value ? Colors.white : Colors.transparent,
+            backgroundColor: isCollapsed.value ? Colors.white : Colors.white,
+            foregroundColor: isCollapsed.value ? Colors.transparent : Colors.black,
             leading: IconButton(
               onPressed: () {
                 Navigator.pop(context);
@@ -58,12 +44,10 @@ class ProductDetailPage extends HookWidget {
               icon: Icon(Icons.arrow_back_ios_new_rounded, color: Color(0xff003bd1), size: 20),
             ),
             actions: [IconButton(onPressed: () {}, icon: SvgPicture.asset('assets/icons/Cart icon.svg'))],
-            flexibleSpace: FlexibleSpaceBar(
-                background: ProductDetailExpandedAppBar(item: item)),
+            flexibleSpace: FlexibleSpaceBar(background: ProductDetailExpandedAppBar(item: item)),
           ),
 
-
-           SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: ConstrainedBox(
               constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height),
               child: Material(
@@ -73,14 +57,44 @@ class ProductDetailPage extends HookWidget {
               ),
             ),
           ),
+
           /*
-          *  ProductDetailTitleWidget(item: widget.item),
+            *  ProductDetailTitleWidget(item: widget.item),
 
-        ProductDetailPriceWidget(item: widget.item),
+          ProductDetailPriceWidget(item: widget.item),
 
-        ProductDetailTagsWidget(item: widget.item),
-          * */
+          ProductDetailTagsWidget(item: widget.item),
+            * */
         ],
+      ),
+
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.all(0),
+
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [BoxShadow(color: Colors.grey.shade300, spreadRadius: 1, blurRadius: 10)],
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 16.0, right: 16, bottom: 16, top: 8),
+            child: TextButton(
+              style: TextButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12), // Set the radius here
+                ),
+                backgroundColor: AppColors.primary,
+                elevation: 2,
+              ),
+              onPressed: () {},
+              child: Text(
+                'add to cart',
+                style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }

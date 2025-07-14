@@ -1,9 +1,13 @@
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
 
+import '../../../themes/app_text_styles.dart';
+
 class ProductDetailSpecificationWidget extends StatefulWidget {
   const ProductDetailSpecificationWidget({super.key, required this.item});
+
   final ProductViewModel item;
+
   @override
   State<ProductDetailSpecificationWidget> createState() => _ProductDetailSpecificationWidgetState();
 }
@@ -12,18 +16,32 @@ class _ProductDetailSpecificationWidgetState extends State<ProductDetailSpecific
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(top: 24, left: 8, right: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-          children: widget.item.specification.map((section){
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(section.title),
-          Text(section.value)
+          Text('PRODUCT DESCRIPTION', style: AppTextsStyle.boldSmall),
+
+          GridView.builder(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: widget.item.specification.length,
+            padding: EdgeInsets.symmetric(),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1, childAspectRatio: 8),
+            itemBuilder: (context, index) {
+              final spec=widget.item.specification[index];
+              return Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Expanded(child: Text(spec.title, style: AppTextsStyle.bold.copyWith(fontSize: 14), textAlign: TextAlign.start,)),
+
+                  Expanded(child: Text(spec.value)),
+                ],
+              );
+
+            },
+          ),
         ],
-      );
-      }).toList(),
       ),
     );
   }
