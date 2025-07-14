@@ -17,7 +17,20 @@ class ProductDetailPage extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final scrollController = useScrollController();
-    final isCollapsed = useState(true);
+    final isCollapsed = useState(false);
+
+    useEffect(() {
+      void scrollListener() {
+        final isNowCollapsed = scrollController.hasClients &&
+            scrollController.offset > (300 - 120);
+        if (isCollapsed.value != isNowCollapsed) {
+          isCollapsed.value = isNowCollapsed;
+        }
+      }
+
+      scrollController.addListener(scrollListener);
+      return () => scrollController.removeListener(scrollListener);
+    }, [scrollController]);
 
     return Scaffold(
       body: CustomScrollView(
@@ -29,10 +42,11 @@ class ProductDetailPage extends HookWidget {
             collapsedHeight: 60,
             centerTitle: false,
             pinned: true,
-            title: AnimatedOpacity(
-              opacity: isCollapsed.value ? 0 : 1,
+            title: AnimatedSwitcher(
               duration: Duration(milliseconds: 500),
-              child: ProductDetailCollapsedAppBarWidget(item: item),
+              child: isCollapsed.value
+                  ? ProductDetailCollapsedAppBarWidget(item: item)
+                  : SizedBox.shrink(),
             ),
             surfaceTintColor: Colors.white,
             backgroundColor: Colors.white,
@@ -57,14 +71,6 @@ class ProductDetailPage extends HookWidget {
               ),
             ),
           ),
-
-          /*
-            *  ProductDetailTitleWidget(item: widget.item),
-
-          ProductDetailPriceWidget(item: widget.item),
-
-          ProductDetailTagsWidget(item: widget.item),
-            * */
         ],
       ),
 
