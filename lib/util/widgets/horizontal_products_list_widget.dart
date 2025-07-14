@@ -1,7 +1,7 @@
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/cupertino.dart';
 
-import '../../general_widgets/header_title_widget.dart';
+import 'header_title_widget.dart';
 import '../../pages/home_page/widgets/home_products_item_widget.dart';
 
 enum ProductType {
@@ -48,7 +48,10 @@ class _HorizontalProductsListWidgetState extends State<HorizontalProductsListWid
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        HeaderTitleWidget(title: widget.type.title),
+        Padding(
+          padding: EdgeInsets.only(top:24, bottom:8, left: 16),
+          child: HeaderTitleWidget(title: widget.type.title, showDivider: true, ),
+        ),
         Container(
           height: 250,
           child: ListView.builder(

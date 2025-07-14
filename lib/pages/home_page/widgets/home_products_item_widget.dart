@@ -17,9 +17,9 @@ class _HomeProductsItemWidgetState extends State<HomeProductsItemWidget> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      //focusColor: Colors.transparent,
-      //splashColor: Colors.transparent,
-      //highlightColor: Colors.transparent,
+      focusColor: Colors.transparent,
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
       onTap: () {Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => ProductDetailPage(item: widget.item,)),

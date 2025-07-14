@@ -1,4 +1,4 @@
-import 'package:e_commerce_ebs/general_widgets/header_title_widget.dart';
+import 'package:e_commerce_ebs/util/widgets/header_title_widget.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +18,9 @@ class _AllProductsListWidgetState extends State<AllProductsListWidget> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        HeaderTitleWidget(title: 'ALL PRODUCTS'),
+    Padding(padding: EdgeInsets.only(top:24, bottom:8, left: 16),
+        child: HeaderTitleWidget(title: 'ALL PRODUCTS', showDivider: true, ),
+    ),
         SizedBox(
           child: GridView.builder(
             physics: NeverScrollableScrollPhysics(),

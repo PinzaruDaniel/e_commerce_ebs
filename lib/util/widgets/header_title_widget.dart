@@ -3,19 +3,20 @@ import 'package:e_commerce_ebs/themes/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class HeaderTitleWidget extends StatelessWidget {
-  const HeaderTitleWidget({super.key, required this.title});
+  const HeaderTitleWidget({super.key, required this.title, required this.showDivider});
   final String title;
-
+  final bool showDivider;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.only(top:24, bottom:8, left: 16),
-    child: Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(title, style: AppTextsStyle.boldSmall),
-        Divider(thickness: 3, radius: BorderRadiusGeometry.circular(24), color: AppColors.secondary, endIndent:350 ,)
+        if (showDivider==true)
+          Divider(thickness: 3, radius: BorderRadiusGeometry.circular(24), color: AppColors.secondary, endIndent: 350,)
+
       ],
-    ));
+    );
   }
 }

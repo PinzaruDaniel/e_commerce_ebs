@@ -5,6 +5,7 @@ import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../themes/app_colors.dart';
+import '../shopping_cart_page/shopping_cart_page.dart';
 
 class ProductDetailPage extends StatefulWidget {
   const ProductDetailPage({super.key, required this.item});
@@ -12,7 +13,6 @@ class ProductDetailPage extends StatefulWidget {
   final ProductViewModel item;
 
   @override
-
   State<ProductDetailPage> createState() => _ProductDetailPageState();
 }
 
@@ -72,7 +72,11 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             ),
             actions: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ShoppingCartPage(items: widget.item),));
+                },
                 icon: SvgPicture.asset('assets/icons/Cart icon.svg'),
               )
             ],
@@ -83,7 +87,10 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
           SliverToBoxAdapter(
             child: ConstrainedBox(
               constraints: BoxConstraints(
-                minHeight: MediaQuery.of(context).size.height,
+                minHeight: MediaQuery
+                    .of(context)
+                    .size
+                    .height,
               ),
               child: Material(
                 borderRadius: const BorderRadius.vertical(top: Radius.circular(15)),
@@ -98,7 +105,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
         width: double.infinity,
         decoration: BoxDecoration(
           color: Colors.white,
-          boxShadow: [BoxShadow(color: Colors.grey.shade300,  blurRadius: 12)],
+          boxShadow: [BoxShadow(color: Colors.grey.shade300, blurRadius: 12)],
         ),
         padding: const EdgeInsets.only(left: 16, top: 8, right: 16, bottom: 28),
         child: TextButton(
@@ -108,9 +115,16 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             elevation: 2,
           ),
           onPressed: () {},
-          child: const Text(
-            'add to cart',
-            style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SvgPicture.asset('assets/icons/Union.svg', height: 14,),
+              SizedBox(width: 6,),
+              Text(
+                'Add to cart',
+                style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+              ),
+            ],
           ),
         ),
       ),

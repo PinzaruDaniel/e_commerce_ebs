@@ -1,4 +1,4 @@
-import 'package:e_commerce_ebs/general_widgets/header_title_widget.dart';
+import 'package:e_commerce_ebs/util/widgets/header_title_widget.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
 import 'home_products_item_widget.dart';
@@ -20,7 +20,7 @@ class _SaleProductsListWidgetState extends State<SaleProductsListWidget> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        HeaderTitleWidget(title: 'SALE PRODUCTS'),
+        HeaderTitleWidget(title: 'SALE PRODUCTS', showDivider: true,),
         Container(
           height: 250,
           child: ListView.builder(

@@ -1,3 +1,4 @@
+import 'package:e_commerce_ebs/util/widgets/header_title_widget.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
@@ -19,7 +20,7 @@ class _ProductDetailDescriptionWidgetState extends State<ProductDetailDescriptio
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('PRODUCT DESCRIPTION', style: AppTextsStyle.boldSmall),
+          HeaderTitleWidget( title: 'PRODUCT DESCRIPTION', showDivider: false),
           SizedBox(height: 12,),
           ReadMoreText(
             widget.item.description,

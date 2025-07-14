@@ -1,3 +1,4 @@
+import 'package:e_commerce_ebs/util/widgets/header_title_widget.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class _ProductDetailSpecificationWidgetState extends State<ProductDetailSpecific
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('PRODUCT DESCRIPTION', style: AppTextsStyle.boldSmall),
+          HeaderTitleWidget(title: 'SALE PRODUCTS', showDivider: false,),
 
           GridView.builder(
             shrinkWrap: true,
