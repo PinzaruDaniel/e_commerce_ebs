@@ -35,8 +35,8 @@ class ProductDetailPage extends HookWidget {
               child: ProductDetailCollapsedAppBarWidget(item: item),
             ),
             surfaceTintColor: Colors.white,
-            backgroundColor: isCollapsed.value ? Colors.white : Colors.white,
-            foregroundColor: isCollapsed.value ? Colors.transparent : Colors.black,
+            backgroundColor: Colors.white,
+            foregroundColor: isCollapsed.value ? Colors.black : Colors.black,
             leading: IconButton(
               onPressed: () {
                 Navigator.pop(context);
