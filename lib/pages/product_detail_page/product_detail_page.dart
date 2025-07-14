@@ -29,7 +29,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
 
   void _scrollListener() {
     final collapsed = scrollController.hasClients &&
-        scrollController.offset > (300 - 120);
+        scrollController.offset > (300 - 140);
     if (collapsed != isCollapsed) {
       setState(() => isCollapsed = collapsed);
     }
@@ -55,15 +55,17 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             pinned: true,
             centerTitle: false,
             title: AnimatedOpacity(
+              curve: Curves.easeOut,
               opacity: isCollapsed ? 1.0 : 0.0,
-              duration: const Duration(milliseconds: 1000),
+              duration: const Duration(milliseconds: 500),
               child: isCollapsed
                   ? ProductDetailCollapsedAppBarWidget(item: widget.item)
                   : const SizedBox.shrink(),
             ),
-            backgroundColor: Colors.white,
+            backgroundColor:
+            isCollapsed ? Colors.white : Colors.transparent,
             surfaceTintColor: Colors.white,
-            foregroundColor: Colors.black,
+
             leading: IconButton(
               icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Color(0xff003bd1), size: 20),
               onPressed: () => Navigator.pop(context),
@@ -96,9 +98,9 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
         width: double.infinity,
         decoration: BoxDecoration(
           color: Colors.white,
-          boxShadow: [BoxShadow(color: Colors.grey.shade300, spreadRadius: 1, blurRadius: 10)],
+          boxShadow: [BoxShadow(color: Colors.grey.shade300,  blurRadius: 12)],
         ),
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+        padding: const EdgeInsets.only(left: 16, top: 8, right: 16, bottom: 28),
         child: TextButton(
           style: TextButton.styleFrom(
             backgroundColor: AppColors.primary,
