@@ -12,6 +12,7 @@ class ProductDetailPage extends StatefulWidget {
   final ProductViewModel item;
 
   @override
+
   State<ProductDetailPage> createState() => _ProductDetailPageState();
 }
 
