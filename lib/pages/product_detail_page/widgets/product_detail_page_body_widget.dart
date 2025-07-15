@@ -25,7 +25,7 @@ class _ProductDetailPageBodyWidgetState extends State<ProductDetailPageBodyWidge
           children: [
             ProductDetailTitleWidget(item: widget.item),
 
-            ProductDetailPriceWidget(item: widget.item),
+            ProductDetailPriceWidget(item: widget.item, showDiscount: true,),
 
             ProductDetailTagsWidget(item: widget.item),
 

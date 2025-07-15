@@ -38,27 +38,38 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
                 ],
               ),
                Container(
-                 width: 290,
+                 color: Colors.red,
+                 width: MediaQuery.of(context).size.width * 0.7,
                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 8.0, right: 8, top: 8, bottom: 4),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: Text(
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                '${widget.item.title} From ${widget.item.company}',
-                                style: AppTextsStyle.bold,
-                                //softWrap: true,
-                              ),
-                            ),
-                          ],
+                        padding: const EdgeInsets.only(left: 8.0, top: 8, bottom: 4),
+                        child: RichText(
+                          text: TextSpan(
+                            style: AppTextsStyle.bold.copyWith(color: Colors.black),
+                            children: [
+                              TextSpan(text: '${widget.item.title} From ${widget.item.company} '),
+                              if (widget.item.sale > 0)
+                                WidgetSpan(
+                                  alignment: PlaceholderAlignment.middle,
+                                  child: Container(
+                                    padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 4),
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xfff8dcde),
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                    child: Text(
+                                      '${widget.item.sale}%',
+                                      style: AppTextsStyle.boldSmall.copyWith(color: const Color(0xffcf1c0c)),
+                                    ),
+                                  ),
+                                ),
+                            ],
+                          ),
                         ),
                       ),
-                      ProductDetailPriceWidget(item: widget.item),
+                      ProductDetailPriceWidget(item: widget.item, showDiscount: false,),
                     ],
                   ),
                ),
@@ -77,11 +88,13 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
                   enableTyping: false
                 ),
                 decoration: QtyDecorationProps(
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                  btnColor: AppColors.primary,
+
                   enabledBorder: InputBorder.none,
                   isBordered: false,
                   width: 8,
                   borderShape: BorderShapeBtn.roundedRect,
+
                 ),
                 initVal: 1,
                 minVal: 1,
