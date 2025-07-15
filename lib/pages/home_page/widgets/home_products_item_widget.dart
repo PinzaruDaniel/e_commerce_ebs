@@ -1,5 +1,6 @@
 import 'package:e_commerce_ebs/pages/product_detail_page/product_detail_page.dart';
 import 'package:e_commerce_ebs/themes/app_text_styles.dart';
+import 'package:e_commerce_ebs/util/routing/app_router.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -20,10 +21,10 @@ class _HomeProductsItemWidgetState extends State<HomeProductsItemWidget> {
       focusColor: Colors.transparent,
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
-      onTap: () {Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => ProductDetailPage(item: widget.item,)),
-      );},
+      onTap: () {
+        AppRouter.openDetailsPage(item: widget.item);
+
+      },
       child: Padding(
         padding: EdgeInsets.only(left: 8, right: 8),
         child: SizedBox(

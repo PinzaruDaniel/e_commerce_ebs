@@ -1,3 +1,4 @@
+import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_add_to_cart_bottom_sheet_widget.dart';
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_collapsed_app_bar_widget.dart';
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_expanded_app_bar.dart';
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_page_body_widget.dart';
@@ -28,8 +29,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
   }
 
   void _scrollListener() {
-    final collapsed = scrollController.hasClients &&
-        scrollController.offset > (300 - 140);
+    final collapsed = scrollController.hasClients && scrollController.offset > (300 - 140);
     if (collapsed != isCollapsed) {
       setState(() => isCollapsed = collapsed);
     }
@@ -58,12 +58,9 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
               curve: Curves.easeOut,
               opacity: isCollapsed ? 1.0 : 0.0,
               duration: const Duration(milliseconds: 500),
-              child: isCollapsed
-                  ? ProductDetailCollapsedAppBarWidget(item: widget.item)
-                  : const SizedBox.shrink(),
+              child: isCollapsed ? ProductDetailCollapsedAppBarWidget(item: widget.item) : const SizedBox.shrink(),
             ),
-            backgroundColor:
-            isCollapsed ? Colors.white : Colors.transparent,
+            backgroundColor: isCollapsed ? Colors.white : Colors.transparent,
             surfaceTintColor: Colors.white,
 
             leading: IconButton(
@@ -73,25 +70,16 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             actions: [
               IconButton(
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ShoppingCartPage(items: widget.item),));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ShoppingCartPage()));
                 },
                 icon: SvgPicture.asset('assets/icons/Cart icon.svg'),
-              )
+              ),
             ],
-            flexibleSpace: FlexibleSpaceBar(
-              background: ProductDetailExpandedAppBar(item: widget.item),
-            ),
+            flexibleSpace: FlexibleSpaceBar(background: ProductDetailExpandedAppBar(item: widget.item)),
           ),
           SliverToBoxAdapter(
             child: ConstrainedBox(
-              constraints: BoxConstraints(
-                minHeight: MediaQuery
-                    .of(context)
-                    .size
-                    .height,
-              ),
+              constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height),
               child: Material(
                 borderRadius: const BorderRadius.vertical(top: Radius.circular(15)),
                 elevation: 0,
@@ -114,12 +102,17 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
             elevation: 2,
           ),
-          onPressed: () {},
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+              builder: (context) => ProductDetailAddToCartBottomSheetWidget(item: widget.item),
+            );
+          },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset('assets/icons/Union.svg', height: 14,),
-              SizedBox(width: 6,),
+              SvgPicture.asset('assets/icons/Union.svg', height: 14),
+              SizedBox(width: 6),
               Text(
                 'Add to cart',
                 style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
