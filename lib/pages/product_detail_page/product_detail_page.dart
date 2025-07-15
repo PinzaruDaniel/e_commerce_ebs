@@ -104,8 +104,17 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
           ),
           onPressed: () {
             showModalBottomSheet(
+              backgroundColor: Colors.white,
+              showDragHandle: true,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(16), topLeft:Radius.circular(16) )),
               context: context,
-              builder: (context) => ProductDetailAddToCartBottomSheetWidget(item: widget.item),
+              builder: (context) =>  Container(
+                  height: MediaQuery.of(context).size.height * 0.4,
+                  child: Column(
+                    children: [
+                      Expanded(child: ProductDetailAddToCartBottomSheetWidget(item: widget.item)),
+                    ],
+                  )),
             );
           },
           child: Row(

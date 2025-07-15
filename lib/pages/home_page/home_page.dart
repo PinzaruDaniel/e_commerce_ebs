@@ -1,4 +1,4 @@
-
+import 'package:common/common.dart';
 import 'package:e_commerce_ebs/pages/shopping_cart_page/shopping_cart_page.dart';
 import 'package:e_commerce_ebs/util/widgets/horizontal_products_list_widget.dart';
 import 'package:e_commerce_ebs/pages/home_page/widgets/home_all_products_list_widget.dart';
@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
     homeController.initProduct();
     homeController.getNewProducts();
     homeController.getSaleProducts();
+    testFunction();
   }
 
 
