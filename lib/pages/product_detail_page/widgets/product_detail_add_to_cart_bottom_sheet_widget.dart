@@ -3,8 +3,9 @@ import 'package:e_commerce_ebs/themes/app_text_styles.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
+import 'package:input_quantity/input_quantity.dart';
 import '../../../themes/app_colors.dart';
+import '../../../util/widgets/header_title_widget.dart';
 
 class ProductDetailAddToCartBottomSheetWidget extends StatefulWidget {
   const ProductDetailAddToCartBottomSheetWidget({super.key, required this.item});
@@ -36,29 +37,59 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
                   ),
                 ],
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
+               Container(
+                 width: 290,
+                 child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        '${widget.item.title} From ${widget.item.company}',
-                        style: AppTextsStyle.bold,
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0, right: 8, top: 8, bottom: 4),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                '${widget.item.title} From ${widget.item.company}',
+                                style: AppTextsStyle.bold,
+                                //softWrap: true,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
+                      ProductDetailPriceWidget(item: widget.item),
                     ],
                   ),
-                  ProductDetailPriceWidget(item: widget.item),
-                ],
-              ),
+               ),
             ],
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(top: 16, left: 16),
-          child: Container(
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: []),
+          padding: EdgeInsets.only(top: 30, left: 24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              HeaderTitleWidget(title: 'QUANTITY', showDivider: false),
+              SizedBox(height: 12),
+              InputQty(
+                qtyFormProps: QtyFormProps(
+                  enableTyping: false
+                ),
+                decoration: QtyDecorationProps(
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                  enabledBorder: InputBorder.none,
+                  isBordered: false,
+                  width: 8,
+                  borderShape: BorderShapeBtn.roundedRect,
+                ),
+                initVal: 1,
+                minVal: 1,
+                onQtyChanged: (val) {
+                  print(val);
+                },
+              ),
+            ],
           ),
         ),
 

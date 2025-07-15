@@ -109,7 +109,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(16), topLeft:Radius.circular(16) )),
               context: context,
               builder: (context) =>  Container(
-                  height: MediaQuery.of(context).size.height * 0.4,
+                  height: MediaQuery.of(context).size.height * 0.35,
                   child: Column(
                     children: [
                       Expanded(child: ProductDetailAddToCartBottomSheetWidget(item: widget.item)),

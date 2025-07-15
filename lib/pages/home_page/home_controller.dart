@@ -11,7 +11,7 @@ class HomeController extends GetxController {
   void initProduct() {
     products.value = [
       ProductViewModel(
-        title: "Wireless Headphones",
+        title: "Wireless Headphones asdasdasdadas",
         company: "Sony",
         imageUrl: ["assets/products/headphones.jpeg", ],
         marks: ["Best Seller", "Trending", "Noise Cancelling", "Long Battery Life", "Comfort Fit", "Bluetooth 5.0"],
