@@ -54,10 +54,7 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
                 ],
               ),
               Container(
-                width: MediaQuery
-                    .of(context)
-                    .size
-                    .width * 0.7,
+                width: MediaQuery.of(context).size.width * 0.7,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -101,7 +98,7 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
             children: [
               HeaderTitleWidget(title: 'QUANTITY', showDivider: false),
               SizedBox(height: 12),
-              InputQty(
+              InputQty.int(
                 qtyFormProps: QtyFormProps(enableTyping: false),
                 decoration: QtyDecorationProps(
                   btnColor: AppColors.primary,
@@ -119,7 +116,7 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
                   print(val);
                   // cartController.cartItem.value?.quantity==val;
                   addCartController.cartItem.value?.quantity = val;
-
+                  addCartController.cartItem.refresh();
                 },
               ),
             ],
@@ -141,14 +138,12 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
               elevation: 2,
             ),
             onPressed: () {
-              // cartController.addToCart(addCartController.cartItem.value);
-              addCartController.initCartItem(widget.item);
               final item = addCartController.cartItem.value;
               if (item != null) {
                 mainAppController.addToCart(item);
                 Navigator.push(Get.context!, MaterialPageRoute(builder: (context) => ShoppingCartPage()));
               }
-              },
+            },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
