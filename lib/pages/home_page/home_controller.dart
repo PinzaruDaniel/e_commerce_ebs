@@ -11,7 +11,8 @@ class HomeController extends GetxController {
   void initProduct() {
     products.value = [
       ProductViewModel(
-        title: "Wireless Headphones asdasdasdadas",
+        id: 1,
+        title: "Wireless Headphones",
         company: "Sony",
         imageUrl: ["assets/products/headphones.jpeg", ],
         marks: ["Best Seller", "Trending", "Noise Cancelling", "Long Battery Life", "Comfort Fit", "Bluetooth 5.0"],
@@ -40,6 +41,7 @@ class HomeController extends GetxController {
         ],
       ),
       ProductViewModel(
+        id: 2,
         title: "Smartphone",
         company: "Samsung",
         imageUrl: ["assets/products/samsung-phone.jpeg"],
@@ -69,6 +71,7 @@ class HomeController extends GetxController {
         ],
       ),
       ProductViewModel(
+        id: 3,
         title: "Gaming Laptop",
         company: "Asus",
         imageUrl: ["assets/products/gaming-laptop.jpg"],
@@ -94,6 +97,7 @@ class HomeController extends GetxController {
         ],
       ),
       ProductViewModel(
+        id: 4,
         title: "Smartwatch",
         company: "Apple",
         imageUrl: ["assets/products/smartwatch.jpeg"],
@@ -123,6 +127,7 @@ class HomeController extends GetxController {
         ],
       ),
       ProductViewModel(
+        id: 5,
         title: "4K TV",
         company: "LG",
         imageUrl: ["assets/products/4k-tv.jpg"],
@@ -152,6 +157,7 @@ class HomeController extends GetxController {
         ],
       ),
       ProductViewModel(
+        id: 6,
         title: "Bluetooth Speaker",
         company: "JBL",
         imageUrl: ["assets/products/jbl.jpg"],
@@ -181,6 +187,7 @@ class HomeController extends GetxController {
         ],
       ),
       ProductViewModel(
+        id: 7,
         title: "DSLR Camera",
         company: "Canon",
         imageUrl: ["assets/products/camera.jpeg"],
@@ -207,6 +214,7 @@ class HomeController extends GetxController {
         ],
       ),
       ProductViewModel(
+        id: 8,
         title: "Microwave Oven",
         company: "Panasonic",
         imageUrl: ["assets/products/microwave.jpg"],
@@ -232,6 +240,7 @@ class HomeController extends GetxController {
         ],
       ),
       ProductViewModel(
+        id: 9,
         title: "Running Shoes",
         company: "Nike",
         imageUrl: ["assets/products/shoes.jpg"],
@@ -256,6 +265,7 @@ class HomeController extends GetxController {
         ],
       ),
       ProductViewModel(
+        id: 10,
         title: "Electric Kettle",
         company: "Philips",
         imageUrl: ["assets/products/electric-kettle.jpg","assets/products/electric-kettle1.jpg","assets/products/electric-kettle2.jpg",],

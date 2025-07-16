@@ -9,6 +9,7 @@ class Specification {
   });
 }
 class ProductViewModel {
+  final int id;
   final String title;
   final String company;
   final List<String> imageUrl;
@@ -20,6 +21,7 @@ class ProductViewModel {
   final List<CategoryViewModel> category;
 
   ProductViewModel({
+    required this.id,
     required this.title,
     required this.company,
     required this.imageUrl,

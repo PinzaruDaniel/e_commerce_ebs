@@ -1,11 +1,17 @@
+import 'package:e_commerce_ebs/controllers/controller_imports.dart';
+import 'package:e_commerce_ebs/pages/product_detail_page/widgets/add_to_cart/add_to_cart_controller.dart';
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_price_widget.dart';
+import 'package:e_commerce_ebs/pages/shopping_cart_page/cart_controller.dart';
+import 'package:e_commerce_ebs/pages/shopping_cart_page/shopping_cart_page.dart';
 import 'package:e_commerce_ebs/themes/app_text_styles.dart';
+import 'package:e_commerce_ebs/view/cart_products_view_model.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:input_quantity/input_quantity.dart';
-import '../../../themes/app_colors.dart';
-import '../../../util/widgets/header_title_widget.dart';
+import '../../../../themes/app_colors.dart';
+import '../../../../util/widgets/header_title_widget.dart';
+import 'package:get/get.dart';
 
 class ProductDetailAddToCartBottomSheetWidget extends StatefulWidget {
   const ProductDetailAddToCartBottomSheetWidget({super.key, required this.item});
@@ -17,8 +23,21 @@ class ProductDetailAddToCartBottomSheetWidget extends StatefulWidget {
 }
 
 class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailAddToCartBottomSheetWidget> {
+
+  AddToCartController get addCartController=>Get.find();
+
+  @override
+  void initState() {
+    super.initState();
+    Get.put(AddToCartController());
+    //cartController.initCartItem(widget.item);
+    addCartController.initCartItem(widget.item);
+
+  }
+
   @override
   Widget build(BuildContext context) {
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -37,42 +56,41 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
                   ),
                 ],
               ),
-               Container(
-                 color: Colors.red,
-                 width: MediaQuery.of(context).size.width * 0.7,
-                 child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 8.0, top: 8, bottom: 4),
-                        child: RichText(
-                          text: TextSpan(
-                            style: AppTextsStyle.bold.copyWith(color: Colors.black),
-                            children: [
-                              TextSpan(text: '${widget.item.title} From ${widget.item.company} '),
-                              if (widget.item.sale > 0)
-                                WidgetSpan(
-                                  alignment: PlaceholderAlignment.middle,
-                                  child: Container(
-                                    padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 4),
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xfff8dcde),
-                                      borderRadius: BorderRadius.circular(4),
-                                    ),
-                                    child: Text(
-                                      '${widget.item.sale}%',
-                                      style: AppTextsStyle.boldSmall.copyWith(color: const Color(0xffcf1c0c)),
-                                    ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.7,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 8.0, top: 8, bottom: 4),
+                      child: RichText(
+                        text: TextSpan(
+                          style: AppTextsStyle.bold.copyWith(color: Colors.black),
+                          children: [
+                            TextSpan(text: '${widget.item.title} From ${widget.item.company} '),
+                            if (widget.item.sale > 0)
+                              WidgetSpan(
+                                alignment: PlaceholderAlignment.middle,
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(vertical: 3, horizontal: 4),
+                                  decoration: BoxDecoration(
+                                    color: Color(0xfff8dcde),
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                  child: Text(
+                                    '${widget.item.sale}%',
+                                    style: AppTextsStyle.boldSmall.copyWith(color: Color(0xffcf1c0c)),
                                   ),
                                 ),
-                            ],
-                          ),
+                              ),
+                          ],
                         ),
                       ),
-                      ProductDetailPriceWidget(item: widget.item, showDiscount: false,),
-                    ],
-                  ),
-               ),
+                    ),
+                    ProductDetailPriceWidget(item: widget.item, showDiscount: false),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
@@ -84,9 +102,7 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
               HeaderTitleWidget(title: 'QUANTITY', showDivider: false),
               SizedBox(height: 12),
               InputQty(
-                qtyFormProps: QtyFormProps(
-                  enableTyping: false
-                ),
+                qtyFormProps: QtyFormProps(enableTyping: false),
                 decoration: QtyDecorationProps(
                   btnColor: AppColors.primary,
 
@@ -94,12 +110,13 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
                   isBordered: false,
                   width: 8,
                   borderShape: BorderShapeBtn.roundedRect,
-
                 ),
                 initVal: 1,
                 minVal: 1,
                 onQtyChanged: (val) {
                   print(val);
+                 // cartController.cartItem.value?.quantity==val;
+                  addCartController.cartItem.value?.quantity==val;
                 },
               ),
             ],
@@ -120,7 +137,14 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
               elevation: 2,
             ),
-            onPressed: () {},
+            onPressed: () {
+             // cartController.addToCart(addCartController.cartItem.value);
+              mainAppController.addToCart(addCartController.initCartItem(widget.item));
+              Navigator.push(
+                Get.context!,
+                MaterialPageRoute(builder: (context) => ShoppingCartPage()),
+              );
+            },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

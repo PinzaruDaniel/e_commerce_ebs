@@ -1,4 +1,4 @@
-import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_add_to_cart_bottom_sheet_widget.dart';
+import 'package:e_commerce_ebs/pages/product_detail_page/widgets/add_to_cart/product_detail_add_to_cart_pop_up_widget.dart';
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_collapsed_app_bar_widget.dart';
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_expanded_app_bar.dart';
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_page_body_widget.dart';
