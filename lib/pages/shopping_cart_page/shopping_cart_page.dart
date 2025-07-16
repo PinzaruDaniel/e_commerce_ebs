@@ -53,7 +53,7 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
 
                     color: Colors.lightGreen,
                     child: Row(
-                      children: [Text(item.title)],
+                      children: [Text(item.title), Text('${item.quantity}')],
                     ),
                   );
                 },

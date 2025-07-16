@@ -23,8 +23,7 @@ class ProductDetailAddToCartBottomSheetWidget extends StatefulWidget {
 }
 
 class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailAddToCartBottomSheetWidget> {
-
-  AddToCartController get addCartController=>Get.find();
+  AddToCartController get addCartController => Get.find();
 
   @override
   void initState() {
@@ -32,12 +31,10 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
     Get.put(AddToCartController());
     //cartController.initCartItem(widget.item);
     addCartController.initCartItem(widget.item);
-
   }
 
   @override
   Widget build(BuildContext context) {
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -57,7 +54,10 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
                 ],
               ),
               Container(
-                width: MediaQuery.of(context).size.width * 0.7,
+                width: MediaQuery
+                    .of(context)
+                    .size
+                    .width * 0.7,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -105,18 +105,21 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
                 qtyFormProps: QtyFormProps(enableTyping: false),
                 decoration: QtyDecorationProps(
                   btnColor: AppColors.primary,
-
                   enabledBorder: InputBorder.none,
                   isBordered: false,
                   width: 8,
+                  /*plusBtn: Container( child:
+                  Icon(Icons.arrow_back_ios_new_rounded)
+                  ),*/
                   borderShape: BorderShapeBtn.roundedRect,
                 ),
                 initVal: 1,
                 minVal: 1,
                 onQtyChanged: (val) {
                   print(val);
-                 // cartController.cartItem.value?.quantity==val;
-                  addCartController.cartItem.value?.quantity==val;
+                  // cartController.cartItem.value?.quantity==val;
+                  addCartController.cartItem.value?.quantity = val;
+
                 },
               ),
             ],
@@ -138,13 +141,14 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
               elevation: 2,
             ),
             onPressed: () {
-             // cartController.addToCart(addCartController.cartItem.value);
-              mainAppController.addToCart(addCartController.initCartItem(widget.item));
-              Navigator.push(
-                Get.context!,
-                MaterialPageRoute(builder: (context) => ShoppingCartPage()),
-              );
-            },
+              // cartController.addToCart(addCartController.cartItem.value);
+              addCartController.initCartItem(widget.item);
+              final item = addCartController.cartItem.value;
+              if (item != null) {
+                mainAppController.addToCart(item);
+                Navigator.push(Get.context!, MaterialPageRoute(builder: (context) => ShoppingCartPage()));
+              }
+              },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
