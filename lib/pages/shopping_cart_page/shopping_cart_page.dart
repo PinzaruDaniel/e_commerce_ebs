@@ -13,10 +13,15 @@ class ShoppingCartPage extends StatefulWidget {
 
 class _ShoppingCartPageState extends State<ShoppingCartPage> {
   CartController get cartController => Get.find();
+
+  List<bool?> isCheckedList = [];
+
   @override
   void initState() {
     super.initState();
     Get.put(CartController());
+
+    isCheckedList = List.filled(cartController.cartItems.length, true);
   }
 
   @override
@@ -37,11 +42,9 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
         title: Text('Shopping Cart', style: AppTextsStyle.boldBig),
       ),
       body: Container(
-
         child: Column(
           children: [
-            if(cartItems.isEmpty)
-              Container(color: Colors.lightGreen,),
+            if (cartItems.isEmpty) Container(color: Colors.lightGreen),
 
             Expanded(
               child: ListView.builder(
@@ -49,11 +52,51 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
                 itemCount: cartItems.length,
                 itemBuilder: (context, index) {
                   final item = cartItems[index];
-                  return Container(
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
+                    child: Container(color: Colors.orange,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 28.0, right: 8),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SizedBox(
+                                  width: 20,
+                                  height: 20,
+                                  child: Checkbox(
+                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+                                    side: BorderSide(color: Colors.grey.shade300, width: 2),
+                                    activeColor: AppColors.primary,
+                                    value: isCheckedList[index],
+                                    onChanged: (bool? value) {
+                                      setState(() {
+                                        isCheckedList[index] = value;
+                                      });
+                                    },
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
 
-                    color: Colors.lightGreen,
-                    child: Row(
-                      children: [Text(item.title), Text('${item.quantity}')],
+                          ClipRRect(
+                            borderRadius: BorderRadiusGeometry.circular(16),
+                            child: Image.asset(item.imageUrl, width: 80, height: 80, fit: BoxFit.cover),
+                          ),
+
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(item.title, style: AppTextsStyle.medium),
+                              Text('\$${item.price}'),
+                              Text('Total: \$ ${item.price*item.quantity}')
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   );
                 },
@@ -62,7 +105,6 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
           ],
         ),
       ),
-
     );
   }
 }
