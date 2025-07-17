@@ -1,4 +1,3 @@
-import 'package:e_commerce_ebs/pages/product_detail_page/product_detail_page.dart';
 import 'package:e_commerce_ebs/themes/app_text_styles.dart';
 import 'package:e_commerce_ebs/util/routing/app_router.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';

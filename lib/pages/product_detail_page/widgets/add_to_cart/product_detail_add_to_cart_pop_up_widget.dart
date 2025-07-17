@@ -7,7 +7,6 @@ import 'package:e_commerce_ebs/util/widgets/product_input_quantity_widget.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:input_quantity/input_quantity.dart';
 import '../../../../themes/app_colors.dart';
 import '../../../../util/widgets/header_title_widget.dart';
 import 'package:get/get.dart';
