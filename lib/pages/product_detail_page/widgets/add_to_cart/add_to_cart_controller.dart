@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../../../../view/cart_products_view_model.dart';
 import '../../../../view/product_view_model.dart';
 
-class AddToCartController extends GetxController{
+class AddToCartController extends GetxController {
   RxList<CartItem> cartItems = RxList([]);
   Rxn<CartItem> cartItem = Rxn<CartItem>();
 
@@ -13,7 +13,8 @@ class AddToCartController extends GetxController{
       title: item.title,
       imageUrl: item.imageUrl[0],
       price: item.price,
-      quantity: cartItem.value?.quantity ??1
+      specification: item.specification.isNotEmpty ? item.specification.first : null,
+      quantity: cartItem.value?.quantity ?? 1,
     );
     cartItem.value = itemToAdd;
     cartItem.refresh();

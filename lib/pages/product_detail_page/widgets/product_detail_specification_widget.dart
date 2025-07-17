@@ -21,7 +21,7 @@ class _ProductDetailSpecificationWidgetState extends State<ProductDetailSpecific
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          HeaderTitleWidget(title: 'SALE PRODUCTS', showDivider: false,),
+          HeaderTitleWidget(title: 'PRODUCT SPECIFICATIONS', showDivider: false,),
 
           GridView.builder(
             shrinkWrap: true,
