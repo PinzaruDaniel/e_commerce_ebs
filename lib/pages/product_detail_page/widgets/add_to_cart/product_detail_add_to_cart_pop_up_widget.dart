@@ -3,6 +3,7 @@ import 'package:e_commerce_ebs/pages/product_detail_page/widgets/add_to_cart/add
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/add_to_cart/widgets/add_to_cart_pop_up_image_widget.dart';
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/add_to_cart/widgets/add_to_cart_pop_up_title_widget.dart';
 import 'package:e_commerce_ebs/util/routing/app_router.dart';
+import 'package:e_commerce_ebs/util/widgets/product_input_quantity_widget.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -53,21 +54,9 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
             children: [
               HeaderTitleWidget(title: 'QUANTITY', showDivider: false),
               SizedBox(height: 12),
-              InputQty.int(
-                qtyFormProps: QtyFormProps(enableTyping: false),
-                decoration: QtyDecorationProps(
-                  btnColor: AppColors.primary,
-                  enabledBorder: InputBorder.none,
-                  isBordered: false,
-                  width: 8,
-
-                  borderShape: BorderShapeBtn.roundedRect,
-                ),
-                initVal: 1,
-                minVal: 1,
-                onQtyChanged: (val) {
-                  print(val);
-                  // cartController.cartItem.value?.quantity==val;
+              ProductInputQuantityWidget(
+                initialValue: 1,
+                onChanged: (val) {
                   addCartController.cartItem.value?.quantity = val;
                   addCartController.cartItem.refresh();
                 },
