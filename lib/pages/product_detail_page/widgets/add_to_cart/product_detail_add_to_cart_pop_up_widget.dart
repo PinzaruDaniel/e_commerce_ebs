@@ -1,10 +1,8 @@
 import 'package:e_commerce_ebs/controllers/controller_imports.dart';
 import 'package:e_commerce_ebs/pages/product_detail_page/widgets/add_to_cart/add_to_cart_controller.dart';
-import 'package:e_commerce_ebs/pages/product_detail_page/widgets/product_detail_price_widget.dart';
-import 'package:e_commerce_ebs/pages/shopping_cart_page/cart_controller.dart';
-import 'package:e_commerce_ebs/pages/shopping_cart_page/shopping_cart_page.dart';
-import 'package:e_commerce_ebs/themes/app_text_styles.dart';
-import 'package:e_commerce_ebs/view/cart_products_view_model.dart';
+import 'package:e_commerce_ebs/pages/product_detail_page/widgets/add_to_cart/widgets/add_to_cart_pop_up_image_widget.dart';
+import 'package:e_commerce_ebs/pages/product_detail_page/widgets/add_to_cart/widgets/add_to_cart_pop_up_title_widget.dart';
+import 'package:e_commerce_ebs/util/routing/app_router.dart';
 import 'package:e_commerce_ebs/view/product_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -29,7 +27,6 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
   void initState() {
     super.initState();
     Get.put(AddToCartController());
-    //cartController.initCartItem(widget.item);
     addCartController.initCartItem(widget.item);
   }
 
@@ -44,50 +41,8 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: Image.asset(widget.item.imageUrl[0], height: 100, width: 100, fit: BoxFit.cover),
-                  ),
-                ],
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width * 0.7,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: 8.0, top: 8, bottom: 4),
-                      child: RichText(
-                        text: TextSpan(
-                          style: AppTextsStyle.bold.copyWith(color: Colors.black),
-                          children: [
-                            TextSpan(text: '${widget.item.title} From ${widget.item.company} '),
-                            if (widget.item.sale > 0)
-                              WidgetSpan(
-                                alignment: PlaceholderAlignment.middle,
-                                child: Container(
-                                  padding: EdgeInsets.symmetric(vertical: 3, horizontal: 4),
-                                  decoration: BoxDecoration(
-                                    color: Color(0xfff8dcde),
-                                    borderRadius: BorderRadius.circular(4),
-                                  ),
-                                  child: Text(
-                                    '${widget.item.sale}%',
-                                    style: AppTextsStyle.boldSmall.copyWith(color: Color(0xffcf1c0c)),
-                                  ),
-                                ),
-                              ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    ProductDetailPriceWidget(item: widget.item, showDiscount: false),
-                  ],
-                ),
-              ),
+              AddToCartPopUpImageWidget(item: widget.item),
+              AddToCartPopUpTitleWidget(item: widget.item),
             ],
           ),
         ),
@@ -105,9 +60,7 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
                   enabledBorder: InputBorder.none,
                   isBordered: false,
                   width: 8,
-                  /*plusBtn: Container( child:
-                  Icon(Icons.arrow_back_ios_new_rounded)
-                  ),*/
+
                   borderShape: BorderShapeBtn.roundedRect,
                 ),
                 initVal: 1,
@@ -122,7 +75,6 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
             ],
           ),
         ),
-
         Spacer(),
         Container(
           width: double.infinity,
@@ -141,7 +93,7 @@ class _ProductDetailAddToCartBottomSheetWidgetState extends State<ProductDetailA
               final item = addCartController.cartItem.value;
               if (item != null) {
                 mainAppController.addToCart(item);
-                Navigator.push(Get.context!, MaterialPageRoute(builder: (context) => ShoppingCartPage()));
+                AppRouter.openShoppingCartPage();
               }
             },
             child: Row(

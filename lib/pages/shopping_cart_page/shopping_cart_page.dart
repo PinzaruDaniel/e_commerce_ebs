@@ -125,6 +125,7 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
                               minVal: 1,
                               onQtyChanged: (val) {
                                 print(val);
+
                                 item.quantity = val;
                                 cartController.cartItems.refresh();
                               },

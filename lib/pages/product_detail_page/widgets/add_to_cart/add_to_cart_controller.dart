@@ -14,7 +14,7 @@ class AddToCartController extends GetxController {
       imageUrl: item.imageUrl[0],
       price: item.price,
       specification: item.specification.isNotEmpty ? item.specification.first : null,
-      quantity: cartItem.value?.quantity ?? 1,
+      quantity: 1,
     );
     cartItem.value = itemToAdd;
     cartItem.refresh();
